@@ -16,6 +16,8 @@ func _ready():
 	pass
 	
 
+	
+
 func _process(delta):
 	rot_velocity = 0;
 	var acceleration = Vector3();
@@ -35,12 +37,4 @@ func _process(delta):
 	if collision_info: 
 		collision_info.collider.queue_free()
 	
-	
-	var pitch = get_rotation().x;
-	var yaw = get_rotation().y;
-	var roll = get_rotation().z;
-	
-	var z = sin(yaw);
-	var y = -(sin(pitch)*cos(yaw));
-	var x = (cos(pitch)*cos(yaw));
-	heading = Vector3(x, y, z)
+	heading = transform.basis.z;
