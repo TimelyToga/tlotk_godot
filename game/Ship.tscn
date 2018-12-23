@@ -2,7 +2,7 @@
 
 [ext_resource path="res://game/Ship.gd" type="Script" id=1]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
 flags_transparent = false
@@ -26,15 +26,17 @@ params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.871094, 0.248215, 0.248215, 1 )
-metallic = 0.07
-metallic_specular = 0.5
+metallic = 0.39
+metallic_specular = 0.92
 metallic_texture_channel = 0
-roughness = 0.0
+roughness = 0.42
 roughness_texture_channel = 0
 emission_enabled = false
 normal_enabled = false
 rim_enabled = false
-clearcoat_enabled = false
+clearcoat_enabled = true
+clearcoat = 1.0
+clearcoat_gloss = 0.5
 anisotropy_enabled = false
 ao_enabled = false
 depth_enabled = false
@@ -52,9 +54,9 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Metallic" ]
+_sections_unfolded = [ "Albedo", "Clearcoat", "Flags", "Metallic", "Rim", "Roughness" ]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 
 render_priority = 0
 flags_transparent = false
@@ -106,16 +108,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=3]
 
-material = SubResource( 1 )
+material = SubResource( 2 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="ConvexPolygonShape" id=3]
+[sub_resource type="ConvexPolygonShape" id=4]
 
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
@@ -141,7 +143,7 @@ _sections_unfolded = [ "Axis Lock" ]
 
 transform = Transform( 1, 0, 0, 0, 0.756303, 0, 0, 0, 1.91652, 0, 0, 0 )
 layers = 1
-material_override = SubResource( 4 )
+material_override = SubResource( 1 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false
@@ -149,14 +151,14 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 disabled = false
 
 
