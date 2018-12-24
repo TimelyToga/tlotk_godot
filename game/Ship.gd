@@ -2,12 +2,14 @@ extends KinematicBody
 
 var heading = Vector3(1, 0, 0);
 var velocity = heading;
-var camera; 
 var rot_velocity = 0.0;
 
 const MAX_SPEED = 5;
 const ACCELERATION = 20;
 const ANGULAR_ACCEL = 0.07;
+
+var camera;
+var target;
 
 
 func _ready():
@@ -15,10 +17,12 @@ func _ready():
 	# Initialization here
 	pass
 	
-
-	
+func _update_camera(delta):
+	pass
 
 func _process(delta):
+	_update_camera(delta);
+	
 	rot_velocity = 0;
 	var acceleration = Vector3();
 	if(Input.is_action_pressed('move_f')):

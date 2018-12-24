@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://AsteroidCellLibrary.meshlib" type="MeshLibrary" id=1]
+
+[node name="GridMap" type="GridMap"]
+
+theme = ExtResource( 1 )
+cell_size = Vector3( 2, 2, 2 )
+cell_octant_size = 8
+cell_center_x = true
+cell_center_y = false
+cell_center_z = true
+cell_scale = 1.0
+collision_layer = 1
+collision_mask = 1
+data = {
+"cells": PoolIntArray( 0, 1, 524289, 65530, 1, 524289, 65531, 1, 524289, 65532, 1, 524289, 65533, 1, 524289, 65534, 1, 524289, 65535, 1, 524289, 0, 2, 524289, 65529, 2, 524289, 65530, 2, 524289, 65531, 2, 524289, 65532, 2, 524289, 65533, 2, 524289, 65534, 2, 524289, 65535, 2, 524289, 65532, 65531, 786433, 65533, 65531, 786432, 65534, 65531, 786432, 65535, 65531, 786432, 65532, 65532, 786432, 65533, 65532, 786432, 65534, 65532, 786432, 65535, 65532, 786432, 65529, 65534, 524288, 65530, 65534, 524288, 65531, 65534, 524289, 65529, 65535, 524288, 65530, 65535, 524288, 65531, 65535, 524289 )
+}
+_sections_unfolded = [ "Cell", "Transform" ]
+__meta__ = {
+"_editor_clip_": 0
+}
+
+
